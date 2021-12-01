@@ -1,8 +1,14 @@
 name: linter-check
 on: push
 jobs:
-  my-job:
+  linter-job:
     runs-on: ubuntu-latest
     steps:
-      - name: my-step
-        run: make lint
+     - uses: actions/checkout@v2
+     - uses: actions/setup-node@v1
+
+     -name: 'install'
+     - run: npm i
+
+     - name: 'start linter'
+     - run: make lint
