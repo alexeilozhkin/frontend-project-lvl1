@@ -8,7 +8,7 @@ jobs:
       - uses: actions/setup-node@v1
 
       - name: 'install'
-      - run: npm i
+        run: npm ci
 
       - name: 'start linter'
-      - run: make lint
+        run: make lint
