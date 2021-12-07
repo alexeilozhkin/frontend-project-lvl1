@@ -1,8 +1,5 @@
 #!/usr/bin/env node
-import isEven from '../src/even.js';
-import getUserName from '../src/cli.js';
+import getUserCommunication from '../src/index.js';
+import { ruleMessage, getEvenQuestionAndAnswer } from '../src/games/even.js';
 
-console.log('Welcome to the Brain Games!');
-const nameOfUser = getUserName();
-const resultOfGame = isEven();
-console.log(`${resultOfGame}, ${nameOfUser}!`);
+getUserCommunication(ruleMessage, getEvenQuestionAndAnswer);
