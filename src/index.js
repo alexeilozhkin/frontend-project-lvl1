@@ -4,7 +4,7 @@ const getUserCommunication = (rule, setGame) => {
   const roundCount = 3;
   console.log('Welcome to the Brain Games!');
   const userName = readlineSync.question('May I have your name? ');
-  let result = `Congratulations, ${userName}`;
+  let result = `Congratulations, ${userName}!`;
   console.log(`Hello, ${userName}!`);
   console.log(rule);
   for (let i = 1; i <= roundCount; i += 1) {
