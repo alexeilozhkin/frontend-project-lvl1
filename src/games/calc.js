@@ -1,17 +1,15 @@
+import getRandomNumber from '../randomNumber.js';
+
 const ruleMessage = 'What is the result of the expression?';
 
 const getExpressionQuestionAndAnswer = () => {
-  const getRandomNumber = () => {
-    const num = Math.floor(Math.random() * 50);
-    return num;
-  };
   const getRandomOperator = () => {
     const possibleOperators = ['+', '-', '*'];
     const randomIndex = Math.floor(Math.random() * possibleOperators.length);
     return possibleOperators[randomIndex];
   };
-  const firstNumber = getRandomNumber();
-  const secondNumber = getRandomNumber();
+  const firstNumber = getRandomNumber(20);
+  const secondNumber = getRandomNumber(20);
   const operator = getRandomOperator();
   const expression = `${firstNumber} ${operator} ${secondNumber}`;
   let correctAnswer;

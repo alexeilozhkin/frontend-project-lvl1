@@ -1,25 +1,22 @@
+import getRandomNumber from '../randomNumber.js';
+
 const ruleMessage = 'Find the greatest common divisor of given numbers.';
 const getGcdQuestionAndAnswer = () => {
-  const getRandomNumber = () => {
-    const maxPossibleRandomNumber = 100;
-    const resultNumber = Math.floor(Math.random() * maxPossibleRandomNumber);
-    return resultNumber;
-  };
   const getGreatestCommonDivisor = (firstNumber, secondNumber) => {
-    let num1 = firstNumber;
-    let num2 = secondNumber;
+    let firstValue = firstNumber;
+    let secondValue = secondNumber;
     let biggestNumber;
     let smallestNumber;
-    while (num1 !== num2) {
-      biggestNumber = (num1 > num2) ? num1 : num2;
-      smallestNumber = (num1 > num2) ? num2 : num1;
-      num1 = smallestNumber;
-      num2 = biggestNumber - smallestNumber;
+    while (firstValue !== secondValue) {
+      biggestNumber = (firstValue > secondValue) ? firstValue : secondValue;
+      smallestNumber = (firstValue > secondValue) ? secondValue : firstValue;
+      firstValue = smallestNumber;
+      secondValue = biggestNumber - smallestNumber;
     }
-    return num1;
+    return firstValue;
   };
-  const firstRandomNumber = getRandomNumber();
-  const secondRandomNumber = getRandomNumber();
+  const firstRandomNumber = getRandomNumber(100);
+  const secondRandomNumber = getRandomNumber(100);
   const question = `${firstRandomNumber} ${secondRandomNumber}`;
   const correctAnswer = getGreatestCommonDivisor(firstRandomNumber, secondRandomNumber);
   return [question, correctAnswer.toString()];
