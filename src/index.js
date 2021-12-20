@@ -17,7 +17,7 @@ const getUserCommunication = (rule, setGame) => {
       console.log('Correct!');
     } else {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${expectedAnswer}'`);
-      result = `Let's try again, ${userName}`;
+      result = `Let's try again, ${userName}!`;
       break;
     }
   }
