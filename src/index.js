@@ -11,7 +11,8 @@ const getUserCommunication = (rule, setGame) => {
     const valueOfSet = setGame();
     const data = valueOfSet[0];
     const expectedAnswer = valueOfSet[1];
-    console.log(`Question: ${data}`);
+    const questionMessage = `Question: ${data}`;
+    console.log(questionMessage);
     const userAnswer = readlineSync.question('Your answer: ');
     if (userAnswer === expectedAnswer) {
       console.log('Correct!');
