@@ -24,7 +24,7 @@ const getExpressionQuestionAndAnswer = () => {
       correctAnswer = firstNumber * secondNumber;
       break;
     default:
-      console.log('error');
+      throw new Error('error');
   }
   return [expression, correctAnswer.toString()];
 };
