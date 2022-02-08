@@ -5,7 +5,7 @@ const ruleMessage = 'What is the result of the expression?';
 const getExpressionQuestionAndAnswer = () => {
   const getRandomOperator = () => {
     const possibleOperators = ['+', '-', '*'];
-    const randomIndex = Math.floor(Math.random() * possibleOperators.length);
+    const randomIndex = getRandomNumber(possibleOperators.length);
     return possibleOperators[randomIndex];
   };
   const firstNumber = getRandomNumber(20);
