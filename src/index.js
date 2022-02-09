@@ -8,9 +8,7 @@ const getUserCommunication = (rule, setGame) => {
   console.log(`Hello, ${userName}!`);
   console.log(rule);
   for (let i = 1; i <= roundCount; i += 1) {
-    const valueOfSet = setGame();
-    const data = valueOfSet[0];
-    const expectedAnswer = valueOfSet[1];
+    const [data, expectedAnswer] = setGame();
     const questionMessage = `Question: ${data}`;
     console.log(questionMessage);
     const userAnswer = readlineSync.question('Your answer: ');
