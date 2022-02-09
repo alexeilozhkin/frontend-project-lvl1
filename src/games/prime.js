@@ -2,7 +2,7 @@ import getRandomNumber from '../randomNumber.js';
 
 const ruleMessage = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 const getPrimeQuestionAndAnswer = () => {
-  const questionNumber = getRandomNumber(100);
+  const questionNumber = getRandomNumber(100) + 1;
   const question = questionNumber;
   const isPrime = (number) => {
     let result = true;
