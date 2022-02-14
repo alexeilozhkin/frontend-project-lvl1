@@ -1,16 +1,19 @@
 import getRandomNumber from '../randomNumber.js';
+import getUserCommunication from '../index.js';
 
 const ruleMessage = 'What number is missing in the progression?';
+
+const setProgression = (firstNumber, progressionStep, progressionLength) => {
+  const progressionArray = [firstNumber];
+  let currentNumber = firstNumber;
+  for (let i = 0; i < progressionLength - 1; i += 1) {
+    currentNumber += progressionStep;
+    progressionArray.push(currentNumber);
+  }
+  return progressionArray;
+};
+
 const getProgressionQuestionAndAnswer = () => {
-  const setProgression = (firstNumber, progressionStep, progressionLength) => {
-    const progressionArray = [firstNumber];
-    let currentNumber = firstNumber;
-    for (let i = 0; i < progressionLength - 1; i += 1) {
-      currentNumber += progressionStep;
-      progressionArray.push(currentNumber);
-    }
-    return progressionArray;
-  };
   const progression = setProgression(getRandomNumber(10), getRandomNumber(15), 15);
   const randomIndex = getRandomNumber(progression.length);
   const correctAnswer = progression[randomIndex];
@@ -18,4 +21,7 @@ const getProgressionQuestionAndAnswer = () => {
   const question = progression.join(' ');
   return [question, correctAnswer.toString()];
 };
-export { ruleMessage, getProgressionQuestionAndAnswer };
+
+const progressionGame = () => getUserCommunication(ruleMessage, getProgressionQuestionAndAnswer);
+
+export default progressionGame;

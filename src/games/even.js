@@ -1,4 +1,5 @@
 import getRandomNumber from '../randomNumber.js';
+import getUserCommunication from '../index.js';
 
 const ruleMessage = 'Answer "yes" if the number is even, otherwise answer "no".';
 const getEvenQuestionAndAnswer = () => {
@@ -7,4 +8,6 @@ const getEvenQuestionAndAnswer = () => {
   return [randomNumber, correctAnswer];
 };
 
-export { ruleMessage, getEvenQuestionAndAnswer };
+const evenGame = () => getUserCommunication(ruleMessage, getEvenQuestionAndAnswer);
+
+export default evenGame;
